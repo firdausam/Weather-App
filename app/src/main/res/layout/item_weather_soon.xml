@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.firdausam.mobile.myweather.data.models.IWeatherItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:id="@+id/iv_weather"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            app:setImageSource="@{item.src}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_cloud_primary" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:padding="8dp"
+            android:text="@{item.date}"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_weather"
+            app:layout_constraintEnd_toStartOf="@+id/tv_degree_max"
+            app:layout_constraintStart_toEndOf="@+id/iv_weather"
+            app:layout_constraintTop_toTopOf="@+id/iv_weather"
+            tools:text="12 Januari 2020" />
+
+        <TextView
+            android:id="@+id/tv_degree_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.maxDegree}"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_weather"
+            app:layout_constraintEnd_toStartOf="@+id/tv_seperator"
+            app:layout_constraintTop_toTopOf="@+id/iv_weather"
+            tools:text="30°C" />
+
+        <TextView
+            android:id="@+id/tv_seperator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" / "
+            app:layout_constraintBottom_toBottomOf="@+id/iv_weather"
+            app:layout_constraintEnd_toStartOf="@+id/tv_degree_min"
+            app:layout_constraintTop_toTopOf="@+id/iv_weather" />
+
+        <TextView
+            android:id="@+id/tv_degree_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.minDegree}"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_weather"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_weather"
+            tools:text="20°C" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

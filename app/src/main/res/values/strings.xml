@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Cuaca App</string>
+    <string name="postal_code">Kode Pos</string>
+    <string name="show">Tampilkan</string>
+    <string name="your_name">Nama</string>
+
+    <string name="name_empty">Nama tidak boleh kosong</string>
+    <string name="postal_code_empty">Kode pos tidak boleh kosong</string>
+    <string name="postal_code_must_five_digits">Kode pos harus 5 (lima) digit</string>
+
+    <string name="welcome_user">Selamat %1$s, <b>%2$s</b>!</string>
+    <string name="postal_code_show">Kode Pos:  <b>%1$s</b></string>
+</resources>
